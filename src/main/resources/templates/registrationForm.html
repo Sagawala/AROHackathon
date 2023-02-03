@@ -1,0 +1,70 @@
+<!DOCTYPE html>  
+<html xmlns:th="https://www.thymeleaf.org">
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<style>  
+body{  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: pink;  
+}  
+.container {  
+    padding: 50px;  
+  background-color: lightblue;  
+}  
+  
+input[type=text], input[type=password], textarea {  
+  width: 100%;  
+  padding: 15px;  
+  margin: 5px 0 22px 0;  
+  display: inline-block;  
+  border: none;  
+  background: #f1f1f1;  
+}  
+input[type=text]:focus, input[type=password]:focus {  
+  background-color: orange;  
+  outline: none;  
+}  
+ div {  
+            padding: 10px 0;  
+         }  
+hr {  
+  border: 1px solid #f1f1f1;  
+  margin-bottom: 25px;  
+}  
+.registerbtn {  
+  background-color: #4CAF50;  
+  color: white;  
+  padding: 16px 20px;  
+  margin: 8px 0;  
+  border: none;  
+  cursor: pointer;  
+  width: 100%;  
+  opacity: 0.9;  
+}  
+.registerbtn:hover {  
+  opacity: 1;  
+}  
+</style>  
+</head>  
+<body>  
+<form th:action="@{/saveEmployee}" th:object="${employees}" method="post">
+  <div class="container"> 
+  
+
+  <left> <h4> Registration Form</h4> </left>  
+  <hr>
+  <label> name </label>
+<input type="text" th:field="*{Fullname}" placeholder= "name" size="20" required />
+
+ <label ><b>Email</b></label>
+ <input type="text" th:field="*{email}" placeholder="Enter Email"  required>
+  
+    <label ><b>Department</b></label>
+    <input type="text" th:field="*{department}" placeholder="Enter Department" name="psw" required>
+  
+    
+    <button type="submit" class="registerbtn">Register</button>  
+    </div>  
+</form>  
+</body>  
+</html>  
